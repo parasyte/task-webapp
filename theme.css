@@ -2,6 +2,7 @@
   :root {
     --background-color: #333;
     --main-background-color: #282828;
+    --main-background-color-vignette: #222;
     --main-shadow-color: #111;
     --text-color: #ccc;
     --dim-text-color: #777;
@@ -22,6 +23,7 @@
   :root {
     --background-color: #eee;
     --main-background-color: #bbb;
+    --main-background-color-vignette: #b0b0b0;
     --main-shadow-color: #888;
     --text-color: #333;
     --dim-text-color: #999;

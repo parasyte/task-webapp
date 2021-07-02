@@ -11,6 +11,11 @@ body {
 
 main {
   background-color: var(--main-background-color);
+  background-image: radial-gradient(
+    closest-corner circle,
+    var(--main-background-color) 70%,
+    var(--main-background-color-vignette) 100%
+  );
   border-radius: 1em;
   box-shadow: 0.5ex 0.5ex 1em var(--main-shadow-color);
   padding: 1em;
