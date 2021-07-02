@@ -27,6 +27,7 @@ main > h1 {
   font-size: calc(var(--font-size) * 2);
   justify-content: center;
   margin: 0 0 1ex;
+  text-shadow: 1px 1px var(--accent-shadow-lower), -1px -1px var(--accent-shadow-upper);
 }
 
 main > section {

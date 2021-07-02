@@ -8,6 +8,8 @@
     --dim-text-color: #777;
     --border-color: #111;
     --accent-color: #06c;
+    --accent-shadow-lower: #053976;
+    --accent-shadow-upper: #071733;
     --task-width: 18em;
     --font-face: sans-serif;
     --font-size: 16pt;
@@ -29,6 +31,8 @@
     --dim-text-color: #999;
     --border-color: #777;
     --accent-color: slateblue;
+    --accent-shadow-lower: #4f439b;
+    --accent-shadow-upper: #c8c4e9;
     --task-width: 18em;
     --font-face: sans-serif;
     --font-size: 16pt;
