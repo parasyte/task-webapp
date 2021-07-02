@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Task List</title>
+    <link rel="stylesheet" href="index.css">
+    <script type="module" src="index.js"></script>
+    <script type="module" src="todo-task.js"></script>
+  </head>
+  <body>
+    <main data-filter="all">
+      <h1>Task List</h1>
+
+      <section>
+        <input id="complete-all" type="checkbox" title="Toggle completion of all tasks.">
+        <input id="new-task" type="text" placeholder="Task: What to do?"
+          title="Task to complete. Must include non-empty text.">
+        <button id="add-task" type="button" title="Add task."></button>
+      </section>
+
+      <todo-list></todo-list>
+
+      <footer>
+        <span id="counter">tasks left</span>
+
+        <fieldset id="filter" title="Filter tasks by state.">
+          <input type="radio" name="filter" value="all" id="filter-all" checked>
+          <label for="filter-all">All</label>
+          <input type="radio" name="filter" value="active" id="filter-active">
+          <label for="filter-active">Active</label>
+          <input type="radio" name="filter" value="complete" id="filter-complete">
+          <label for="filter-complete">Complete</label>
+        </fieldset>
+
+        <div>
+          <button id="clear-completed" type="button"
+            title="Clear all completed tasks.">Clear Completed</button>
+        </div>
+      </footer>
+    </main>
+
+    <template id="todo-task">
+      <link rel="stylesheet" href="todo-task.css">
+      <section>
+        <input id="complete" type="checkbox" title="Toggle task completion.">
+        <input id="task-name" type="text">
+        <button id="delete" type="button" title="Delete task."></button>
+      </section>
+    </template>
+  </body>
+</html>

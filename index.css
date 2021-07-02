@@ -1,0 +1,143 @@
+@import './theme.css';
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  display: flex;
+  font-family: var(--font-face);
+  justify-content: center;
+  margin: 2em;
+}
+
+main {
+  background-color: var(--main-background-color);
+  border-radius: 1em;
+  box-shadow: 0.5ex 0.5ex 1em var(--main-shadow-color);
+  padding: 1em;
+}
+
+main > h1 {
+  color: var(--accent-color);
+  display: flex;
+  font-size: calc(var(--font-size) * 2);
+  justify-content: center;
+  margin: 0 0 1ex;
+}
+
+main > section {
+  margin: 0.5ex 0;
+}
+
+#complete-all, #new-task {
+  font-size: var(--font-size);
+}
+
+#complete-all {
+  appearance: none;
+}
+
+#complete-all::before {
+  content: var(--unchecked);
+}
+
+#complete-all:checked::before {
+  content: var(--checked);
+}
+
+#new-task {
+  background-color: var(--background-color);
+  border: 2px solid var(--border-color);
+  border-radius: 0.5ex;
+  color: var(--text-color);
+  padding: 0.5ex;
+  width: var(--task-width);
+}
+
+#new-task:focus-visible {
+  outline: var(--accent-color) solid 2px;
+}
+
+#add-task {
+  border: none;
+  background-color: transparent;
+  font-size: calc(var(--font-size) * 0.75);
+  padding: 0;
+}
+
+#add-task::before {
+  content: var(--add-icon);
+}
+
+/*
+Counters are implemented here, in CSS only.
+The DOM already knows how many tasks are complete.
+You don't need to track that state elsewhere.
+*/
+todo-list {
+  counter-reset: todo;
+}
+
+todo-task:not(.complete) {
+  counter-increment: todo;
+}
+
+#counter::before {
+  content: counter(todo) ' ';
+}
+
+/*
+Hide filtered tasks and the radio buttons.
+Again, only CSS is necessary because the DOM knows the state of the contents it owns.
+*/
+input[name='filter'],
+main[data-filter='active'] todo-task.complete,
+main[data-filter='complete'] todo-task:not(.complete) {
+  display: none;
+}
+
+/* Style the filter labels to look more like selectable buttons. */
+input[name='filter'] + label {
+  border: 2px solid transparent;
+  border-radius: 0.5ex;
+  padding: 0.5ex 0.5em;
+}
+
+input[name='filter']:checked + label {
+  background-color: var(--background-color);
+  border-color: var(--accent-color);
+}
+
+/* Miscellaneous styling fixes. */
+footer {
+  align-items: center;
+  display: flex;
+  font-size: var(--footer-font-size);
+  justify-content: center;
+  margin-top: 1em;
+}
+
+footer > :is(span, fieldset, div) {
+  flex: 1;
+}
+
+footer > div {
+  display: flex;
+  justify-content: flex-end;
+}
+
+#filter {
+  display: flex;
+  border: unset;
+  justify-content: center;
+  padding-block: unset;
+}
+
+#clear-completed {
+  appearance: none;
+  background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
+  border-radius: 0.5ex;
+  color: var(--text-color);
+  font-size: var(--footer-font-size);
+  padding: 0.5ex 0.5em;
+}

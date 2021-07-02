@@ -1,0 +1,39 @@
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background-color: #333;
+    --main-background-color: #282828;
+    --main-shadow-color: #111;
+    --text-color: #ccc;
+    --dim-text-color: #777;
+    --border-color: #111;
+    --accent-color: #06c;
+    --task-width: 18em;
+    --font-face: sans-serif;
+    --font-size: 16pt;
+    --footer-font-size: 10pt;
+    --unchecked: '⚫';
+    --checked: '🔵';
+    --add-icon: '➕';
+    --delete-icon: '❌';
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-color: #eee;
+    --main-background-color: #bbb;
+    --main-shadow-color: #888;
+    --text-color: #333;
+    --dim-text-color: #999;
+    --border-color: #777;
+    --accent-color: slateblue;
+    --task-width: 18em;
+    --font-face: sans-serif;
+    --font-size: 16pt;
+    --footer-font-size: 10pt;
+    --unchecked: '⚪';
+    --checked: '🟣';
+    --add-icon: '➕';
+    --delete-icon: '❌';
+  }
+}
