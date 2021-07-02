@@ -10,11 +10,11 @@ section {
   font-family: var(--font-face);
 }
 
-#complete:before {
+#complete::before {
   content: var(--unchecked);
 }
 
-#complete:checked:before {
+#complete:checked::before {
   content: var(--checked);
 }
 
