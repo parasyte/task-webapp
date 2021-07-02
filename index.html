@@ -6,7 +6,7 @@
     <title>Task List</title>
     <link rel="stylesheet" href="./index.css">
     <script type="module" src="./index.js"></script>
-    <script type="module" src="./components/todo-task.js"></script>
+    <script type="module" src="./components/task-item.js"></script>
   </head>
   <body>
     <main data-filter="all">
@@ -14,12 +14,12 @@
 
       <section>
         <input id="complete-all" type="checkbox" title="Toggle completion of all tasks.">
-        <input id="new-task" type="text" placeholder="Task: What to do?"
+        <input id="new-task" type="text" placeholder="New task: What to do?"
           title="Task to complete. Must include non-empty text.">
         <button id="add-task" type="button" title="Add task."></button>
       </section>
 
-      <todo-list></todo-list>
+      <task-list></task-list>
 
       <footer>
         <span id="counter">tasks left</span>
@@ -40,8 +40,8 @@
       </footer>
     </main>
 
-    <template id="todo-task">
-      <link rel="stylesheet" href="./components/todo-task.css">
+    <template id="task-item">
+      <link rel="stylesheet" href="./components/task-item.css">
       <section>
         <input id="complete" type="checkbox" title="Toggle task completion.">
         <input id="task-name" type="text">

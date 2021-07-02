@@ -4,12 +4,12 @@ import { create_task } from './index.js';
 export function load() {
   try {
     // Load tasks.
-    const todo = JSON.parse(localStorage.getItem('todo'));
+    const tasks = JSON.parse(localStorage.getItem('tasks'));
     const fragment = document.createDocumentFragment();
-    for (const [task, complete] of Object.entries(todo)) {
+    for (const [task, complete] of Object.entries(tasks)) {
       fragment.appendChild(create_task(task, complete));
     };
-    $('todo-list').appendChild(fragment);
+    $('task-list').appendChild(fragment);
 
     // Load filter.
     $(`#filter-${localStorage.getItem('filter')}`).click();
@@ -18,11 +18,11 @@ export function load() {
 
 export function save() {
   // Save tasks.
-  const todo = {};
-  for (const el of $$('todo-task')) {
-    todo[el.task] = el.complete;
+  const tasks = {};
+  for (const el of $$('task-item')) {
+    tasks[el.task] = el.complete;
   }
-  localStorage.setItem('todo', JSON.stringify(todo));
+  localStorage.setItem('tasks', JSON.stringify(tasks));
 
   // Save filter.
   const filter = $('input[name="filter"]:checked').value;

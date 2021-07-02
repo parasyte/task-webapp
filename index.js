@@ -2,7 +2,7 @@ import { $, $$ } from './utils.js';
 import { load, save } from './storage.js';
 
 export function create_task(task, complete) {
-  const el = document.createElement('todo-task');
+  const el = document.createElement('task-item');
   el.task = task;
   el.complete = complete;
 
@@ -18,7 +18,7 @@ function add_task() {
   const task = new_task.value.trim();
   if (task !== '') {
     $('#complete-all').checked = false;
-    $('todo-list').appendChild(create_task(task, false));
+    $('task-list').appendChild(create_task(task, false));
   }
   new_task.value = '';
   save();
@@ -27,7 +27,7 @@ function add_task() {
 // Event handling
 $('#complete-all').addEventListener('change', () => {
   const value = $('#complete-all').checked;
-  for (const el of $$('todo-task')) {
+  for (const el of $$('task-item')) {
     el.complete = value;
   }
   save();
@@ -47,7 +47,7 @@ $('#filter').addEventListener('change', () => {
 });
 
 $('#clear-completed').addEventListener('click', () => {
-  for (const el of $$('todo-task.complete')) {
+  for (const el of $$('task-item.complete')) {
     el.remove();
   }
   save();

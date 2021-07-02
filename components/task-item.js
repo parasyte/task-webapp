@@ -3,13 +3,13 @@ import { $ } from '../utils.js';
 // A place to store closed shadowRoots.
 const shadowRoots = new WeakMap();
 
-class ToDoTask extends HTMLElement {
+class TaskItem extends HTMLElement {
   constructor() {
     super();
     const shadowRoot = this.attachShadow({ mode: 'closed' });
     shadowRoots.set(this, shadowRoot);
     shadowRoot.appendChild(
-      $('#todo-task').content.cloneNode(true)
+      $('#task-item').content.cloneNode(true)
     );
   }
 
@@ -18,7 +18,7 @@ class ToDoTask extends HTMLElement {
 
     // Toggle the "complete" class on the task.
     shadowRoot.querySelector('#complete').addEventListener('change', () => {
-      ToDoTask.reflectClass.bind(this)();
+      TaskItem.reflectClass.bind(this)();
       this.dispatchEvent(new CustomEvent('complete'));
     });
 
@@ -37,7 +37,7 @@ class ToDoTask extends HTMLElement {
 
     // Properties may be added before the element is added to the DOM.
     // These are lazily fixed here.
-    const lazyProperty = ToDoTask.lazyProperty.bind(this);
+    const lazyProperty = TaskItem.lazyProperty.bind(this);
     lazyProperty('task');
     lazyProperty('complete');
   }
@@ -67,7 +67,7 @@ class ToDoTask extends HTMLElement {
 
   set complete(value) {
     shadowRoots.get(this).querySelector('#complete').checked = Boolean(value);
-    ToDoTask.reflectClass.bind(this)();
+    TaskItem.reflectClass.bind(this)();
   }
 
   // Reflect the `complete` property to the host class list.
@@ -78,4 +78,4 @@ class ToDoTask extends HTMLElement {
   }
 }
 
-customElements.define('todo-task', ToDoTask);
+customElements.define('task-item', TaskItem);

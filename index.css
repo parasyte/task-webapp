@@ -73,16 +73,16 @@ Counters are implemented here, in CSS only.
 The DOM already knows how many tasks are complete.
 You don't need to track that state elsewhere.
 */
-todo-list {
-  counter-reset: todo;
+task-list {
+  counter-reset: tasks;
 }
 
-todo-task:not(.complete) {
-  counter-increment: todo;
+task-item:not(.complete) {
+  counter-increment: tasks;
 }
 
 #counter::before {
-  content: counter(todo) ' ';
+  content: counter(tasks) ' ';
 }
 
 /*
@@ -90,8 +90,8 @@ Hide filtered tasks and the radio buttons.
 Again, only CSS is necessary because the DOM knows the state of the contents it owns.
 */
 input[name='filter'],
-main[data-filter='active'] todo-task.complete,
-main[data-filter='complete'] todo-task:not(.complete) {
+main[data-filter='active'] task-item.complete,
+main[data-filter='complete'] task-item:not(.complete) {
   display: none;
 }
 
