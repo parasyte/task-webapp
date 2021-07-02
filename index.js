@@ -50,6 +50,7 @@ $('#clear-completed').addEventListener('click', () => {
   for (const el of $$('todo-task.complete')) {
     el.remove();
   }
+  save();
 });
 
 // Load saved state from localStorage.
