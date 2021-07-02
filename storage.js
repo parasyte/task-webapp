@@ -13,9 +13,7 @@ export function load() {
 
     // Load filter.
     $(`#filter-${localStorage.getItem('filter')}`).click();
-  } catch(e) {
-    console.error(e);
-  }
+  } catch(e) {}
 }
 
 export function save() {
