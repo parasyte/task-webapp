@@ -5,7 +5,9 @@ section {
 }
 
 #complete {
+  -webkit-appearance: none;
   appearance: none;
+  font-family: var(--font-face);
 }
 
 #complete:before {

@@ -39,7 +39,9 @@ main > section {
 }
 
 #complete-all {
+  -webkit-appearance: none;
   appearance: none;
+  font-family: var(--font-face);
 }
 
 #complete-all::before {
