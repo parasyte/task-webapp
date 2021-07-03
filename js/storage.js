@@ -1,5 +1,5 @@
 import { $, $$ } from './utils.js';
-import { create_task } from './index.js';
+import { create_task } from '../index.js';
 
 export function load() {
   try {

@@ -1,5 +1,5 @@
-import { $, $$ } from './utils.js';
-import { load, save } from './storage.js';
+import { $, $$ } from './js/utils.js';
+import { load, save } from './js/storage.js';
 
 export function create_task(task, complete) {
   const el = document.createElement('task-item');

@@ -1,4 +1,4 @@
-import { $ } from '../utils.js';
+import { $ } from '../js/utils.js';
 
 // A place to store closed shadowRoots.
 const shadowRoots = new WeakMap();
