@@ -14,7 +14,7 @@ class TaskItem extends HTMLElement {
   }
 
   connectedCallback() {
-    let shadowRoot = shadowRoots.get(this);
+    const shadowRoot = shadowRoots.get(this);
 
     // Toggle the "complete" class on the task.
     shadowRoot.querySelector('#complete').addEventListener('change', () => {
@@ -23,9 +23,7 @@ class TaskItem extends HTMLElement {
     });
 
     // Update task.
-    let task = shadowRoot.querySelector('#task-name');
-    task.addEventListener('change', () => {
-      this.task = task.value;
+    shadowRoot.querySelector('#task-name').addEventListener('change', () => {
       this.dispatchEvent(new CustomEvent('change'));
     });
 
