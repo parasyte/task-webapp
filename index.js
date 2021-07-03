@@ -1,6 +1,13 @@
 import { $, $$ } from './js/utils.js';
 import { load, save } from './js/storage.js';
 
+// Module-level constants for element references that are reused.
+const MAIN = $('main');
+const COMPLETE_ALL = $('#complete-all');
+const NEW_TASK = $('#new-task');
+const TASK_LIST = $('#task-list');
+
+// Create a new `task-item` element.
 export function create_task(task, complete) {
   const el = document.createElement('task-item');
   el.task = task;
@@ -13,27 +20,27 @@ export function create_task(task, complete) {
   return el;
 }
 
+// Add a task to the list.
 function add_task() {
-  const new_task = $('#new-task');
-  const task = new_task.value.trim();
+  const task = NEW_TASK.value.trim();
   if (task !== '') {
-    $('#complete-all').checked = false;
-    $('task-list').appendChild(create_task(task, false));
+    COMPLETE_ALL.checked = false;
+    TASK_LIST.appendChild(create_task(task, false));
   }
-  new_task.value = '';
+  NEW_TASK.value = '';
   save();
 }
 
 // Event handling
-$('#complete-all').addEventListener('change', () => {
-  const value = $('#complete-all').checked;
+COMPLETE_ALL.addEventListener('change', () => {
+  const value = COMPLETE_ALL.checked;
   for (const el of $$('task-item')) {
     el.complete = value;
   }
   save();
 });
 
-$('#new-task').addEventListener('keydown', (event) => {
+NEW_TASK.addEventListener('keydown', (event) => {
   if (event.key === 'Enter') {
     add_task();
   }
@@ -42,7 +49,7 @@ $('#new-task').addEventListener('keydown', (event) => {
 $('#add-task').addEventListener('click', add_task);
 
 $('#filter').addEventListener('change', () => {
-  $('main').dataset.filter = $('input[name="filter"]:checked').value;
+  MAIN.dataset.filter = $('input[name="filter"]:checked').value;
   save();
 });
 
