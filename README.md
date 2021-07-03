@@ -4,7 +4,7 @@
 
 Many UI frameworks use a task list application example to illustrate how the framework is used. The idea is popular enough that there are entire projects dedicated to writing the same task list with multiple frameworks to better compare various UI frameworks.
 
-This is the same kind of task list application, but it does not use any UI framework beyond what is provided by vanilla JavaScript, HTML, and CSS. It works on every major browser released since 2020. The primary source code is under 5 KiB total (gzipped) with no dependencies and build system necessary.
+This is the same kind of task list application, but it does not use any UI framework beyond what is provided by vanilla JavaScript, HTML, and CSS. It works on every major browser released since 2020. The primary source code is under 5 KiB total (gzipped) with no dependencies or build system necessary.
 
 This is mostly an example of the [KISS](https://en.wikipedia.org/wiki/KISS_principle) and [YAGNI](https://www.martinfowler.com/bliki/Yagni.html) principles at work. Build only what you need, and pay only the minimum cost required. It's also an example of the extreme difference between using a feature-rich framework like React and the bare minimum to get the job done.
 
@@ -22,20 +22,21 @@ Supports dark mode and light mode themes.
 
 These counts were produced by [Tokei](https://github.com/XAMPPRocky/tokei) using the `--no-ignore` argument to get an accurate count of all sources, including dependencies.
 
-[`task-webapp`](https://github.com/parasyte/task-webapp/tree/8242850beffd1fa2b361bfb3164fd80042cd45d2) (this project):
+[`task-webapp`](https://github.com/parasyte/task-webapp/tree/94010efca1fb55e4a52f89c1a64a5e3fe1ed00f8) (this project):
 
 ```text
 ===============================================================================
  Language            Files        Lines         Code     Comments       Blanks
 ===============================================================================
  CSS                     3          252          206           11           35
- JavaScript              4          175          130           16           29
+ JavaScript              4          173          128           16           29
+ Markdown                1           76            0           58           18
 -------------------------------------------------------------------------------
  HTML                    1           46           40            0            6
  |- HTML                 1            6            6            0            0
  (Total)                             52           46            0            6
 ===============================================================================
- Total                   8          473          376           27           70
+ Total                   9          547          374           85           88
 ===============================================================================
 ```
 
