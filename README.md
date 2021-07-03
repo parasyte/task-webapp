@@ -1,5 +1,7 @@
 # Task-webapp
 
+[Live demo](https://parasyte.github.io/task-webapp)
+
 Many UI frameworks use a task list application example to illustrate how the framework is used. The idea is popular enough that there are entire projects dedicated to writing the same task list with multiple frameworks to better compare various UI frameworks.
 
 This is the same kind of task list application, but it does not use any UI framework beyond what is provided by vanilla JavaScript, HTML, and CSS. It works on every major browser released since 2020. The primary source code is under 5 KiB total (gzipped) with no dependencies and build system necessary.
