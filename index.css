@@ -9,7 +9,7 @@ body {
   margin: 2em;
 }
 
-main {
+#main {
   background-color: var(--main-background-color);
   background-image: radial-gradient(
     closest-corner circle,
@@ -21,7 +21,7 @@ main {
   padding: 1em;
 }
 
-main > h1 {
+#main > h1 {
   color: var(--accent-color);
   display: flex;
   font-size: calc(var(--font-size) * 2);
@@ -30,7 +30,7 @@ main > h1 {
   text-shadow: 1px 1px var(--accent-shadow-lower), -1px -1px var(--accent-shadow-upper);
 }
 
-main > section {
+#main > section {
   margin: 0.5ex 0;
 }
 
@@ -81,7 +81,7 @@ Counters are implemented here, in CSS only.
 The DOM already knows how many tasks are complete.
 You don't need to track that state elsewhere.
 */
-task-list {
+#task-list {
   counter-reset: tasks;
 }
 
@@ -98,8 +98,8 @@ Hide filtered tasks and the radio buttons.
 Again, only CSS is necessary because the DOM knows the state of the contents it owns.
 */
 input[name='filter'],
-main[data-filter='active'] task-item.complete,
-main[data-filter='complete'] task-item:not(.complete) {
+#main[data-filter='active'] task-item.complete,
+#main[data-filter='complete'] task-item:not(.complete) {
   display: none;
 }
 

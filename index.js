@@ -2,7 +2,7 @@ import { $, $$ } from './js/utils.js';
 import { load, save } from './js/storage.js';
 
 // Module-level constants for element references that are reused.
-const MAIN = $('main');
+const MAIN = $('#main');
 const COMPLETE_ALL = $('#complete-all');
 const NEW_TASK = $('#new-task');
 const TASK_LIST = $('#task-list');

@@ -1,6 +1,9 @@
 import { $, $$ } from './utils.js';
 import { create_task } from '../index.js';
 
+// Module-level constants for element references that are reused.
+const TASK_LIST = $('#task-list');
+
 export function load() {
   try {
     // Load tasks.
@@ -9,7 +12,7 @@ export function load() {
     for (const [task, complete] of Object.entries(tasks)) {
       fragment.appendChild(create_task(task, complete));
     };
-    $('task-list').appendChild(fragment);
+    TASK_LIST.appendChild(fragment);
 
     // Load filter.
     $(`#filter-${localStorage.getItem('filter')}`).click();
