@@ -2,10 +2,24 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=550, viewport-fit=cover">
+    <meta name="apple-mobile-web-app-capable" content="yes">
     <title>Task List</title>
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" sizes="16x16" href="img/icon16.png">
+    <link rel="icon" sizes="32x32" href="img/icon32.png">
+    <link rel="icon" sizes="180x180" href="img/icon180.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="img/icon180.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="img/icon192.png">
+    <link rel="apple-touch-icon" sizes="512x512" href="img/icon512.png">
+    <link rel="preload" href="./index.css" as="style">
+    <link rel="preload" href="./index.js" as="script">
+    <link rel="preload" href="./components/task-item.css" as="style">
+    <link rel="preload" href="./components/task-item.js" as="script">
+    <link rel="preload" href="./js/storage.js" as="script">
+    <link rel="preload" href="./js/utils.js" as="script">
+    <link rel="preload" href="./theme.css" as="style">
     <link rel="stylesheet" href="./index.css">
-    <link rel="stylesheet" href="./components/task-item.css">
     <script type="module" src="./index.js"></script>
     <script type="module" src="./components/task-item.js"></script>
   </head>
