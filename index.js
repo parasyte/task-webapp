@@ -48,10 +48,7 @@ NEW_TASK.addEventListener('keydown', (event) => {
 
 $('#add-task').addEventListener('click', add_task);
 
-$('#filter').addEventListener('change', () => {
-  MAIN.dataset.filter = $('input[name="filter"]:checked').value;
-  save();
-});
+$('#filter').addEventListener('change', save);
 
 $('#clear-completed').addEventListener('click', () => {
   for (const el of $$('task-item.complete')) {
