@@ -140,6 +140,11 @@ footer > div {
   padding-block: unset;
 }
 
+#main:has(#filter-active:checked) task-item.complete,
+#main:has(#filter-complete:checked) task-item:not(.complete) {
+  display: none;
+}
+
 #clear-completed {
   appearance: none;
   background-color: var(--background-color);
